@@ -2,11 +2,13 @@ const customName = document.getElementById('customname');
 const randomize = document.querySelector('.randomize');
 const story = document.querySelector('.story');
 
+randomize.addEventListener('click', result);
+
+
 function randomValueFromArray(array){
   const random = Math.floor(Math.random()*array.length);
   return array[random];
 }
-
 
 // random story items
 
@@ -33,8 +35,6 @@ Bob saw the whole thing, but was not surprised — ${xItem} weighs 300 pounds, a
 let newStory = storyText(xItem, yItem, zItem);
     replaceAll(xItem, yItem, zItem);
     return newStory;
-
-randomize.addEventListener('click', result);
 
 function result() {
 
