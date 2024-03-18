@@ -36,7 +36,9 @@ function result() {
   story.style.visibility = 'visible';
 };
 
-let newStory = storyText;
+let newStory = storyText(xItem, yItem, zItem);
+    replaceAll(xItem, yItem, zItem);
+    return newStory
 
 let xItem = randomValueFromArray(insertx);
 
