@@ -16,7 +16,8 @@ const insertZ = ['spontaneously combusted', 'melted into a puddle on the sidewal
 
 // story text
 const  storyText = 'It was 94 fahrenheit outside, so :insertx: went for a walk. When they got to :inserty:,\
- they stared in horror for a few moments, then :insertz:. \Bob saw the whole thing, but was not surprised — :insertx: weighs 300 pounds, and it was a hot day.';
+ they stared in horror for a few moments, then :insertz:. \
+ Bob saw the whole thing, but was not surprised — :insertx: weighs 300 pounds, and it was a hot day.';
 
 // Story generator
 
@@ -33,10 +34,6 @@ function result() {
   if(customName.value !== '') {
     const name = customName.value;
     newStory = newStory.replace("Bob", name);
-<<<<<<< HEAD
-=======
-    console.log(name)
->>>>>>> c4cd8b0c81d5c9b23f73f9c4bdd00a8fdd327a55
     }
   if(document.getElementById("uk").checked) {
     const weight = Math.round(300/14) + ' stone';
@@ -44,19 +41,7 @@ function result() {
     newStory = newStory.replace("94 fahrenheit", temperature)
     newStory = newStory.replace("300 pounds", weight)
   }
-<<<<<<< HEAD
   story.textContent = newStory;
   story.style.visibility = 'visible';
-=======
-    xItem = randomValueFromArray(insertX);
-    yItem = randomValueFromArray(insertY);
-    zItem = randomValueFromArray(insertZ);
-    newStory = storyText;
-    newStory = newStory.replaceAll(":insertx:", xItem);
-    newStory = newStory.replace(":inserty:", yItem);
-    newStory = newStory.replace(":insertz:", zItem);
-    story.textContent = newStory;
-    story.style.visibility = 'visible';
->>>>>>> c4cd8b0c81d5c9b23f73f9c4bdd00a8fdd327a55
 
  };
