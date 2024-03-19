@@ -23,17 +23,6 @@ const  storyText = 'It was 94 fahrenheit outside, so :insertx: went for a walk. 
 randomize.addEventListener('click', result);
 
 function result() {
-
-  if(customName.value !== '') {
-    const name = customName.value;
-    newStory = newStory.replace("Bob", name);
-    console.log(name)
-    }
-  if(document.getElementById("uk").checked) {
-    const weight = Math.round(300);
-    const temperature =  Math.round(94);
-
-  }
     xItem = randomValueFromArray(insertX);
     yItem = randomValueFromArray(insertY);
     zItem = randomValueFromArray(insertZ);
@@ -41,7 +30,17 @@ function result() {
     newStory = newStory.replaceAll(":insertx:", xItem);
     newStory = newStory.replace(":inserty:", yItem);
     newStory = newStory.replace(":insertz:", zItem);
-    story.textContent = newStory;
-    story.style.visibility = 'visible';
+  if(customName.value !== '') {
+    const name = customName.value;
+    newStory = newStory.replace("Bob", name);
+    }
+  if(document.getElementById("uk").checked) {
+    const weight = Math.round(300/14) + ' stone';
+    const temperature = Math.round((94-32) * (5/9)) + ' centigrade';
+    newStory = newStory.replace("94 fahrenheit", temperature)
+    newStory = newStory.replace("300 pounds", weight)
+  }
+  story.textContent = newStory;
+  story.style.visibility = 'visible';
 
  };
