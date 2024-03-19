@@ -32,9 +32,6 @@ Bob saw the whole thing, but was not surprised — ${xItem} weighs 300 pounds, a
 
 // Story generator
 
-let newStory = storyText(xItem, yItem, zItem);
-    replaceAll(xItem, yItem, zItem);
-    return newStory;
 
 function result() {
 
@@ -48,7 +45,7 @@ function result() {
     const temperature =  Math.round(94);
 
   }
-
+  let newStory = storyText(xItem, yItem, zItem);
   story.textContent = newStory;
   story.style.visibility = 'visible';
 };
