@@ -26,6 +26,8 @@ function result() {
 
   if(customName.value !== '') {
     const name = customName.value;
+    newStory = newStory.replace("Bob", name);
+    console.log(name)
     }
   if(document.getElementById("uk").checked) {
     const weight = Math.round(300);
@@ -41,5 +43,5 @@ function result() {
     newStory = newStory.replace(":insertz:", zItem);
     story.textContent = newStory;
     story.style.visibility = 'visible';
-    console.log(xItem)
+
  };
