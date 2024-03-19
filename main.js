@@ -33,7 +33,6 @@ function result() {
     const temperature =  Math.round(94);
 
   }
-    if (story.value == ''){
     xItem = randomValueFromArray(insertx);
     yItem = randomValueFromArray(inserty);
     zItem = randomValueFromArray(insertz);
@@ -43,7 +42,7 @@ function result() {
     newStory.replace(':insertz:', zItem);
     story.textContent = newStory;
     story.style.visibility = 'visible';
-    };
+
  };
 
 
