@@ -15,36 +15,39 @@ const insertz = ['spontaneously combusted', 'melted into a puddle on the sidewal
 
 
 // story text
-let  storyText = 'It was 94 fahrenheit outside, so ${xItem} went for a walk.\
-When they got to $yItem, they stared in horror for a few moments, then ${zItem}. \
-Bob saw the whole thing, but was not surprised — ${xItem} weighs 300 pounds, and it was a hot day.';
+let  storyText = 'It was 94 fahrenheit outside, so :insertx: went for a walk. When they got to :inserty:, they stared in horror for a few moments, then :insertz:. Bob saw the whole thing, but was not surprised — :insertx: weighs 300 pounds, and it was a hot day.';
 
 // Story generator
 
+randomize.addEventListener('click', result);
 
 function result() {
 
   if(customName.value !== '') {
-    const name = customName.value;
-
-  }
-
+    const mcName = customName.value;
+    } else {
+        mcName = "Bob"
+    }
   if(document.getElementById("uk").checked) {
     const weight = Math.round(300);
     const temperature =  Math.round(94);
 
   }
+    if (story.value == null){
     xItem = randomValueFromArray(insertx);
     yItem = randomValueFromArray(inserty);
     zItem = randomValueFromArray(insertz);
     newStory = storyText;
-    newStory.replaceAll(xItem, zItem, yItem)
+    newStory.replace(':insertx:', xItem);
+    newStory.replace(':inserty:', yItem);
+    newStory.replace(':insertz:', zItem);
     story.textContent = newStory;
     story.style.visibility = 'visible';
-};
+    };
+ };
 
 
-randomize.addEventListener('click', result);
+
 console.log(storyText)
 console.log(newStory)
 console.log(story)
